@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <p>Halaman ini merupakan kalkulator sederhana</p>
+
+    <script>
+      const firstNum = Number(prompt("Masukan angka pertama"));
+      const secondNum = Number(prompt("Masukan angka kedua"));
+      const operator = prompt(
+        `Pilih Operator berikut ini :
+        1. x 
+        2. : 
+        3. + 
+        4. - 
+        5. % `
+      );
+
+      //UNCOMMENT THIS to use switch logical operator instead
+      /*
+      switch(operator) {
+        case '1':
+          alert(firstNum * secondNum)
+          break;
+        case '2':
+          alert(firstNum / secondNum)
+          break;
+        case '3':
+          alert(firstNum + secondNum)
+          break;
+        case '4':
+          alert(firstNum - secondNum)
+          break;
+        case '5':
+          alert(firstNum % secondNum)
+          break;
+      }
+      */
+
+      if (operator == 1 || operator == "x") {
+        alert(firstNum * secondNum);
+      } else if (operator == 2 || operator == ":") {
+        alert(firstNum / secondNum);
+      } else if (operator == 3 || operator == "+") {
+        alert(firstNum + secondNum);
+      } else if (operator == 4 || operator == "-") {
+        alert(firstNum - secondNum);
+      } else if(operator == 5 || operator == '%') {
+        alert(firstNum % secondNum);
+      } else {
+        alert("Error memasukan operator")
+      }
+
+    </script>
+  </body>
+</html>

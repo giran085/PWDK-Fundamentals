@@ -10,16 +10,20 @@
       const sumApple = Number(prompt("Jumlah Appel"));
       const sumGrape = Number(prompt("Jumlah Grape"));
       const sumOrange = Number(prompt("Jumlah Orange"));
-      let namasaya = "afgan"
+
+      //prices are stored in variables so they'll easily changed
+      priceApple = 10000
+      priceGrape = 15000
+      priceOrange = 60000
 
       //summing total cost
-      const total = sumApple * 10000 + sumGrape * 15000 + sumOrange * 60000;
+      const total = sumApple * priceApple + sumGrape * priceGrape + sumOrange * priceOrange;
 
       //gives shopping details to user
       alert(`
-    Apple: ${sumApple} x 10000 = Rp${sumApple * 10000}
-    Grape: ${sumGrape} x 15000 = Rp${sumGrape * 15000}
-    Apple: ${sumOrange} x 60000 = Rp${sumOrange * 60000}
+    Apple: ${sumApple} x 10000 = Rp${sumApple * priceApple}
+    Grape: ${sumGrape} x 15000 = Rp${sumGrape * priceGrape}
+    Apple: ${sumOrange} x 60000 = Rp${sumOrange * priceOrange}
 
     Total: Rp${total}
       `);
