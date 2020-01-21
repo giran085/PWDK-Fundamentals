@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fruits shopping chart</title>
+  </head>
+  <body>
+    <script>
+      //asking user inputs
+      const sumApple = Number(prompt("Jumlah Appel"));
+      const sumGrape = Number(prompt("Jumlah Grape"));
+      const sumOrange = Number(prompt("Jumlah Orange"));
+      let namasaya = "afgan"
+
+      //summing total cost
+      const total = sumApple * 10000 + sumGrape * 15000 + sumOrange * 60000;
+
+      //gives shopping details to user
+      alert(`
+    Apple: ${sumApple} x 10000 = Rp${sumApple * 10000}
+    Grape: ${sumGrape} x 15000 = Rp${sumGrape * 15000}
+    Apple: ${sumOrange} x 60000 = Rp${sumOrange * 60000}
+
+    Total: Rp${total}
+      `);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var d = new Date();
+      const platNomor = prompt("Masukan plat nomor");
+      if (Number(platNomor.substr(2, 4)) % 2 !== 0 && d.getDate % 2 !== 0) {
+        alert("Plat ganjil dan tanggal ganjil, anda boleh jalan");
+        console.log(platNomor.substr(2, 4));
+      } else if(Number(platNomor.substr(2, 4)) % 2 == 0 && d.getDate % 2 == 0) {
+        alert("Plat genap dan tanggal genap")
+      } else {
+        alert("either of today's date or your vehicle number is not even nor odd")
+      }
+    </script>
+  </body>
+</html>
