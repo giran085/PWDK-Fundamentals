@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <title>TheZano Fruits Shop</title>
+    <script>
+
+      //asking user inputs
+      const sumApple = Number(prompt("Jumlah Appel"));
+      const sumGrape = Number(prompt("Jumlah Grape"));
+      const sumOrange = Number(prompt("Jumlah Orange"));
+
+      //Stocks of each fruits
+      const stockApple = 8;
+      const stockGrape = 10;
+      const stockOrange = 7;
+
+
+      if (sumApple > stockApple) {
+        alert("maaf maaf, stok Apple habis, ulangi transaksi!");
+      } else if (sumGrape > stockGrape) {
+        alert("maaf, stok Grape habis, ulangi transaksi!");
+      } else if (sumOrange > stockOrange) {
+        alert("maaf, stok Orange habis, ulangi transaksi!");
+      } else {
+        proceedToBill();
+      }
+
+      // function declaration which calculates and provide billing details to user.
+      function proceedToBill() {
+
+        //prices are stored in variables so they'll easily changed
+        const priceApple = 10000;
+        const priceGrape = 15000;
+        const priceOrange = 60000;
+
+
+        //summing total cost
+        const total =
+          sumApple * priceApple +
+          sumGrape * priceGrape +
+          sumOrange * priceOrange;
+
+        const dibayar = prompt("Masukan nilai uang dibayar")
+        const kembalian = dibayar - total
+
+        kembalian < 0 
+          ? alert("Uangnya kurang coy!, ulangi transaksi!") 
+          : alert(`
+      Apple: ${sumApple} x 10000 = Rp${sumApple * priceApple}
+      Grape: ${sumGrape} x 15000 = Rp${sumGrape * priceGrape}
+      Apple: ${sumOrange} x 60000 = Rp${sumOrange * priceOrange}
+
+      Total: Rp${total}
+      Kembalian: Rp${kembalian}
+        `);
+      }
+
+    </script>
+  </body>
