@@ -1,0 +1,21 @@
+<script>
+  const massa = prompt("Masukan Massa Badan Anda! (Kg)"), tinggi=prompt("Masukan Tinggi Badan Anda! (cm)")
+  const IMT = (massa / (tinggi * tinggi / 10000));
+
+  switch(true){
+    case (IMT < 18.5):
+      alert("berat badan anda kurang");
+      break;
+    case (IMT > 18.5 && IMT < 24.9):
+      alert("berat badan anda ideal");
+      break;
+    case (IMT > 25.0 && IMT < 29.9):
+      alert("berat badan anda ideal");
+      break;
+    case (IMT > 30.0 && IMT < 39.9):
+      alert("berat badan anda ideal");
+      break;
+    default: 
+      alert("anda obesitas");
+  }
+</script>

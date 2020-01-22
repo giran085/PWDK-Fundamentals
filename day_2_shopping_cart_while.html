@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <title>TheZano Fruits Shop</title>
+    <script>
+        let stockApple  = 8,
+            stockGrape  = 10,
+            stockOrange = 7,
+            sumApple,
+            sumGrape,
+            sumOrange,
+            isLanjut = true
+
+
+        
+        do {
+          sumApple = prompt('Masukan Jumlah Apel')
+          stockCheck(stockGrape, 'Grape', sumApple)
+        } while(isLanjut)
+
+        do {
+          sumGrape = prompt('Masukan Jumlah Grape')
+          stockCheck(stockApple, 'Apple', sumGrape)
+        } while(isLanjut)
+
+        do {
+          sumOrange = prompt('Masukan Jumlah Orange')
+          stockCheck(stockOrange, 'Orange', sumOrange)
+        } while(isLanjut)
+
+          proceedToBill();
+
+        // function declaration which calculates and provide billing details to user.
+        function proceedToBill() {
+
+          //prices are stored in variables so they'll easily changed
+          const priceApple  = 10000,
+                priceGrape  = 15000,
+                priceOrange = 60000
+
+
+          //summing total cost
+          const total =
+            sumApple  * priceApple +
+            sumGrape  * priceGrape +
+            sumOrange * priceOrange
+
+        let dibayar, kembalian
+
+        let IsUlangHitung = true
+          do{
+          dibayar = prompt("Masukan nilai uang dibayar")
+          kembalian = dibayar - total
+          if (kembalian < 0 ) {
+              alert("Uangnya kurang coy!, ulangi transaksi!") 
+            } else {
+              IsUlangHitung = false
+              alert(`
+                Apple: ${sumApple}  x 10000 = Rp${sumApple  * priceApple}
+                Grape: ${sumGrape}  x 15000 = Rp${sumGrape  * priceGrape}
+                Apple: ${sumOrange} x 60000 = Rp${sumOrange * priceOrange}
+
+                Total: Rp${total}
+                Kembalian: Rp${kembalian}
+            `);
+            }
+          } while(IsUlangHitung)
+        }
+
+        function stockCheck(stock, itemName, sumItem){
+          if (sumItem > stock) {
+            alert(`maaf, stok ${itemName} habis, stok tinggal ${stock}, ulangi input!`)
+          } else {
+            isLanjut = false
+          }
+        }
+
+    </script>
+  </body>

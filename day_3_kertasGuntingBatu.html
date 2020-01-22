@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let P1Move = prompt("Player 1 Pilih Apa?").toLowerCase();
+      let P2Move = prompt("Player 2 Pilih Apa?").toLowerCase();
+
+      if (checkInput(P1Move) && checkInput(P2Move)) {
+        if (P1Move == "gunting" && P2Move == "kertas") {
+          console.log("p1 win");
+        } else if (P1Move == "kertas" && P2Move == "batu") {
+          console.log("p1 win");
+        } else if (P1Move == "batu" && P2Move == "gunting") {
+          console.log("p1 win");
+        } else if (P1Move == P2Move) {
+          console.log("draw");
+        } else {
+          console.log("p2 win");
+        }
+      } else {
+        console.log("input error");
+      }
+
+      function checkInput(move) {
+        switch (move) {
+          case "gunting":
+            return true;
+          case "batu":
+            return true;
+          case "kertas":
+            return true;
+        }
+      }
+    </script>
+  </body>
+</html>
