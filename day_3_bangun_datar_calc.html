@@ -8,6 +8,7 @@
 
 
   <script>
+    // Menu
       const namaBangun = Number(prompt(
       `Pilih nomor dari daftar nama bangun berikut ini :
         1. Persegi 
@@ -15,6 +16,7 @@
         3. Segitiga Siku-siku `
       ));
 
+    //User input and alert
       switch(namaBangun){
         case 1:
           const sisi = prompt("Masukan nila sisi persegi")
@@ -30,12 +32,14 @@
                 tinggi   = prompt("masukan nilai tinggi")
           alert(`Luas segitiga siku siku = ${calcTriangle(alas, tinggi)}`)
           break;
+        default:
+          alert(`kesalahan input masukan nomor yang tersedia!`)
       }
 
+      // Declare areas functions
       function calcSquare(s){
         return s * s
       }
-
       function calcRectangle(l, w){
         return w * l
       }
