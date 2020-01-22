@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bangun Datar Calc</title>
+</head>
+<body>
+
+
+  <script>
+      const namaBangun = Number(prompt(
+      `Pilih nomor dari daftar nama bangun berikut ini :
+        1. Persegi 
+        2. Persegi Panjang 
+        3. Segitiga Siku-siku `
+      ));
+
+      switch(namaBangun){
+        case 1:
+          const sisi = prompt("Masukan nila sisi persegi")
+          alert(`Luas persegi = ${calcSquare(sisi)}`)
+          break;
+        case 2:
+          const panjang = prompt("Masukan nilai panjang"),
+                lebar   = prompt("masukan nilai lebar")
+          alert(`Luas persegi panjang = ${calcRectangle(panjang, lebar)}`)
+          break;
+        case 3:
+          const alas     = prompt("Masukan nilai alas"),
+                tinggi   = prompt("masukan nilai tinggi")
+          alert(`Luas segitiga siku siku = ${calcTriangle(alas, tinggi)}`)
+          break;
+      }
+
+      function calcSquare(s){
+        return s * s
+      }
+
+      function calcRectangle(l, w){
+        return w * l
+      }
+      function calcTriangle(l, h){
+        return h * l / 2
+      }
+
+  </script>
+</body>
+</html>
