@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <title>TheZano Fruits Shop</title>
+    <script>
+// START OF MAIN ROUTINE
+      let ulangProgram;
+      do {
+        let stockApple  = 8,
+            stockGrape  = 10,
+            stockOrange = 7,
+            sumApple,
+            sumGrape,
+            sumOrange
+        
+        sumApple  = stockAndInputCheck(stockApple, 'Apple')
+        sumGrape  = stockAndInputCheck(stockGrape, 'Grape')
+        sumOrange = stockAndInputCheck(stockOrange, 'Orange')
+
+        proceedToBill();
+        
+        checkUlangProgram()
+
+// END OF MAIN ROUTINE
+
+// ******FUNCTIONS*********//
+
+  // function declaration which calculates and provide billing details to user.
+
+      function proceedToBill() {
+
+        //prices are stored in variables so they'll easily changed
+        const priceApple  = 10000,
+              priceGrape  = 15000,
+              priceOrange = 60000
+
+
+        //summing total cost
+        const total =
+          sumApple  * priceApple +
+          sumGrape  * priceGrape +
+          sumOrange * priceOrange
+
+      let dibayar, kembalian
+
+      let IsUlangHitung = true
+        do{
+        dibayar = prompt("Masukan nilai uang dibayar")
+        kembalian = dibayar - total
+        if (kembalian < 0 ) {
+            alert("Uangnya kurang coy!, ulangi transaksi!") 
+          } else {
+            IsUlangHitung = false
+            alert(`
+              Apple: ${sumApple}  x 10000 = Rp${sumApple  * priceApple}
+              Grape: ${sumGrape}  x 15000 = Rp${sumGrape  * priceGrape}
+              Apple: ${sumOrange} x 60000 = Rp${sumOrange * priceOrange}
+
+              Total: Rp${total}
+              Kembalian: Rp${kembalian}
+          `);
+          }
+        } while(IsUlangHitung)
+      }
+
+        function stockCheck(stock, itemName, sumItem){
+          if (sumItem > stock ) {
+            alert(`maaf, stok ${itemName} habis, stok tinggal ${stock}, ulangi input!`)
+          } else {
+            isLanjut = false
+          }
+        }
+
+      function inputCheck(itemName){
+        do {
+          sumItem = prompt(`Masukan Jumlah ${itemName}`)
+          if (Number(sumItem) < 0 || isNaN(sumItem)){ 
+            alert('input error! ')
+            lanjutCheck = true
+          } else {
+            return sumItem
+          }
+        } while(lanjutCheck)
+      }
+   
+      function stockAndInputCheck(stock, itemName){
+        let lanjutCheck;
+        do{
+          sumItem = inputCheck(itemName)
+          if (sumItem > stock ) {
+            alert(`maaf, stok ${itemName} habis, stok tinggal ${stock}, ulangi input!`)
+            lanjutCheck =true
+          } else {
+            return sumItem
+          }
+        } while(lanjutCheck)
+      }
+
+      function checkUlangProgram(){
+        let yn;
+        let lanjutCheck;
+          do {
+            yn = prompt(`Ulang Program? y/n`).toLowerCase()
+            console.log(yn);
+            if (yn == 'y'){ 
+              lanjutCheck = false
+              ulangProgram = true
+            } else if (yn == 'n'){
+              alert('Terimakasi telah berbelanja')
+              lanjutCheck = false;
+              ulangProgram = false
+            } else {
+              alert('input error')
+            }
+          } while(lanjutCheck)
+        }
+      } while (ulangProgram)
+    </script>
+  </body>

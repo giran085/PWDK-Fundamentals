@@ -30,6 +30,7 @@
           jamKeluar = Number(prompt("keluar jam berapa? 0 - 24"));
           if (isNaN(jamKeluar) || jamKeluar <= 0 || jamKeluar > 24) {
             alert("input error! ulangi!");
+            ulangJamKeluar = true
           }
         } while (isNaN(jamKeluar) || jamKeluar < 0 || jamKeluar > 24);
 
