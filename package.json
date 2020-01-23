@@ -1,0 +1,20 @@
+{
+  "name": "PWDK-Fundamentals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "day_1_ifelse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheZano/PWDK-Fundamentals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheZano/PWDK-Fundamentals/issues"
+  },
+  "homepage": "https://github.com/TheZano/PWDK-Fundamentals#readme"
+}
