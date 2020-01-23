@@ -6,21 +6,14 @@
 // **
 // *
 
-let n = 5,
-    j = 0,
-    bintang = "";
-
-do {
-  let i = n;
-  while (i > j) {
-    bintang += "*";
-    i--;
+let n = 5
+let bintang = ''
+for(let g = 0; g < n; g++){
+  for(let i = 0; i < (n - g); i++){
+    bintang += '*'
   }
-  // removing space
-  if (j < n) {
-    bintang += "\n";
-  }
-  j++;
-} while (j < n);
+  bintang += '\n'
+}
 
 console.log(bintang);
+
