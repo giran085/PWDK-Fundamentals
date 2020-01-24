@@ -9,13 +9,7 @@ function hapusVokal(string) {
   return hasil;
 }
 
-function ganjilGenap(number) {
-  if (number % 2 == 0) {
-    return "Genap";
-  } else {
-    return "Ganjil";
-  }
-}
+const ganjilGenap = number => number % 2 == 0 ? 'Ganjil' : 'Genap'
 
 function angkaTerbesar(a, b, c) {
   let max = a;
@@ -54,5 +48,5 @@ console.log(
   ganjilGenap(11),
   hapusVokal("Fikri"),
   filterstring("12383FIKDJF14"),
-  cekPlatNomor('D 4 ED')
+  cekPlatNomor('D 4 ED'),
 );
