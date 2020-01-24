@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title></title>
-  </head>
-  <body>
-    <script>
-      let isUlang = false;
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+
+<body>
+  <script>
+    let isUlang = false;
+    do {
+      let jamMasuk = 0,
+        jamKeluar = 0,
+        difference = 0,
+        biaya = 0,
+        biayaParkir = 4000;
+
+      let ulangJamMasuk;
       do {
-        let jamMasuk = 0,
-          jamKeluar = 0,
-          difference = 0,
-          biaya = 0,
-          biayaParkir = 4000;
-
-        let ulangJamMasuk;
-        do {
-          ulangJamMasuk = false;
-          jamMasuk = Number(prompt("masuk jam berapa? 0 - 24"));
-          if (isNaN(jamMasuk) || jamMasuk <= 0 || jamMasuk > 24) {
-            alert("input error! ulangi!");
-            ulangJamMasuk = true;
-          }
-        } while (ulangJamMasuk);
-
-        let ulangJamKeluar;
-        do {
-          ulangJamKeluar = false;
-          jamKeluar = Number(prompt("keluar jam berapa? 0 - 24"));
-          if (isNaN(jamKeluar) || jamKeluar <= 0 || jamKeluar > 24) {
-            alert("input error! ulangi!");
-            ulangJamKeluar = true
-          }
-        } while (isNaN(jamKeluar) || jamKeluar < 0 || jamKeluar > 24);
-
-        // handling if the user keluar in the next day
-        jamKeluar - jamMasuk >= 0
-          ? (difference = jamKeluar - jamMasuk)
-          : (difference = 24 - (jamMasuk - jamKeluar)); //lol just do the math
-
-        difference > 3
-          ? alert(`biaya anda adalah Rp${biayaParkir * 3 + difference * 1000}`)
-          : alert(`biaya anda adalah ${difference * biayaParkir}`);
-
-        let ulangYn;
-        do {
-          ulangYn = false;
-          yn = prompt("Ulangi?(y/n)");
-          if (yn == "y") {
-            isUlang = true;
-          } else if (yn == "n") {
-            isUlang = false;
-          } else {
-            alert(`input error masukan y/n!`);
-            ulangYn = true;
-          }
-        } while (ulangYn);
-
-        if (yn === "y") {
-          isUlang = true;
-        } else {
-          isUlang = false;
-          alert("hati-hati di jalan");
+        ulangJamMasuk = false;
+        jamMasuk = Number(prompt("masuk jam berapa? 0 - 24"));
+        if (isNaN(jamMasuk) || jamMasuk <= 0 || jamMasuk > 24) {
+          alert("input error! ulangi!");
+          ulangJamMasuk = true;
         }
-      } while (isUlang);
-    </script>
-  </body>
+      } while (ulangJamMasuk);
+
+      let ulangJamKeluar;
+      do {
+        ulangJamKeluar = false;
+        jamKeluar = Number(prompt("keluar jam berapa? 0 - 24"));
+        if (isNaN(jamKeluar) || jamKeluar <= 0 || jamKeluar > 24) {
+          alert("input error! ulangi!");
+          ulangJamKeluar = true
+        }
+      } while (isNaN(jamKeluar) || jamKeluar < 0 || jamKeluar > 24);
+
+      // handling if the user keluar in the next day
+      jamKeluar - jamMasuk >= 0
+        ? (difference = jamKeluar - jamMasuk)
+        : (difference = 24 + (jamKeluar - jamMasuk )); //lol just do the math
+
+      difference > 3
+        ? alert(`biaya anda adalah Rp${biayaParkir * 3 + difference * 1000}`)
+        : alert(`biaya anda adalah ${difference * biayaParkir}`);
+
+      let ulangYn;
+      do {
+        ulangYn = false;
+        yn = prompt("Ulangi?(y/n)");
+        if (yn == "y") {
+          isUlang = true;
+        } else if (yn == "n") {
+          isUlang = false;
+        } else {
+          alert(`input error masukan y/n!`);
+          ulangYn = true;
+        }
+      } while (ulangYn);
+
+      if (yn === "y") {
+        isUlang = true;
+      } else {
+        isUlang = false;
+        alert("hati-hati di jalan");
+      }
+    } while (isUlang);
+  </script>
+</body>
+
 </html>

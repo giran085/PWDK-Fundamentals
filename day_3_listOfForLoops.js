@@ -16,6 +16,7 @@ function returnNSpace(n) {
   return z;
 }
 
+// eslint-disable-next-line no-unused-vars
 function returnSegiTigaSikuForLoop(tinggi) {
   let result = "";
   for (let i = 0; i < tinggi; i++) {
