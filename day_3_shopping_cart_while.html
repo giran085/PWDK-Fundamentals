@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <title>TheZano Fruits Shop</title>
     <script>
+// START OF MAIN ROUTINE
         let stockApple  = 8,
             stockGrape  = 10,
             stockOrange = 7,
@@ -13,6 +14,7 @@
         
         do {
           sumApple = prompt('Masukan Jumlah Apel')
+          inputCheck(sumApple)
           stockCheck(stockGrape, 'Grape', sumApple)
         } while(isLanjut)
 
@@ -27,6 +29,9 @@
         } while(isLanjut)
 
           proceedToBill();
+// END OF MAIN ROUTINE
+
+// ******FUNCTIONS*********//
 
         // function declaration which calculates and provide billing details to user.
         function proceedToBill() {
@@ -66,12 +71,17 @@
         }
 
         function stockCheck(stock, itemName, sumItem){
-          if (sumItem > stock) {
+          if (sumItem > stock ) {
             alert(`maaf, stok ${itemName} habis, stok tinggal ${stock}, ulangi input!`)
           } else {
             isLanjut = false
           }
         }
 
+        function inputCheck(sumItem){
+          if (Number(sumItem) < 0 || isNaN(sumItem)){ 
+            alert('input error! ')
+        }
+        }
     </script>
   </body>
