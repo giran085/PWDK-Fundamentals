@@ -13,12 +13,15 @@ const ganjilGenap = number => number % 2 == 0 ? 'Ganjil' : 'Genap'
 
 function angkaTerbesar(a, b, c) {
   let max = a;
+  
   if (b > max) {
     max = b;
   }
+  
   if (c > max) {
     max = c;
   }
+  
   return max;
 }
 

@@ -7,6 +7,7 @@ function squareEveryDigits(num){
   return hasil;
 }
 
+
 function removeFirstAndLastChar(string){
   let hasil = ''
   for (let i = 1; i < string.length - 1; i ++){
