@@ -15,28 +15,28 @@ function removeFirstAndLastChar(string){
   return hasil
 }
 
-function removeVocal(string){
-  let hasil = ''
-  for(let i = 0; i < string.length; i++){
-    if('aiueoAIUEO'.indexOf(string[i]) < 0){
-      hasil += string[i]
+function removeVocal(string) {
+  let hasil = '';
+  for (let i = 0; i < string.length; i++) {
+    if ('aiueoAIUEO'.indexOf(string[i]) < 0) {
+      hasil += string[i];
     }
   }
-  return hasil
+  return hasil;
 }
 
-function simpleCalculator(a, b, operator){
-  switch(operator){
+function simpleCalculator(a, b, operator) {
+  switch (operator) {
     case '+':
-      return a + b
+      return a + b;
     case '-':
-      return a - b
+      return a - b;
     case '*':
-      return a * b
+      return a * b;
     case '/':
-      return a / b
+      return a / b;
     case '%':
-      return a % b
+      return a % b;
   }
 }
 

@@ -43,10 +43,8 @@ function cekPlatNomor(string) {
   }
 }
 
-console.log(
-  angkaTerbesar(1200, -1, 12),
-  ganjilGenap(11),
-  hapusVokal("Fikri"),
-  filterstring("12383FIKDJF14"),
-  cekPlatNomor('D 4 ED'),
-);
+console.log(angkaTerbesar(1200, -1, 12))
+console.log(ganjilGenap(11))
+console.log(hapusVokal("Fikri"))
+console.log(filterstring("12383FIKDJF14"))
+console.log(cekPlatNomor('D 4 ED'))
