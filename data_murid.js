@@ -1,4 +1,4 @@
-function alertMurids() {
+function showMurids() {
   var text = 'Daftar Murid \n'
   for (var i = 0; i < data_murid.length; i++) {
     text += (i + 1) + '. ' + data_murid[i] + ' kelas ' + kelas_murid[i] + '\n'
@@ -71,7 +71,7 @@ do {
     5. quit program`)
   switch(pilihan){
     case '1':
-      alertMurids()
+      showMurids()
       break;
     case '2':
       tambahMurids()
