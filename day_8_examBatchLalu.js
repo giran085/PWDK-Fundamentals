@@ -38,11 +38,25 @@ function arrayMash(arr1, arr2) {
 }
 
 function summation(num) {
+  let display = ''
   let result = 0
+  
+  //jumlahin aja
   for (let i = 0; i <= num; i++){
     result += i
   }
-  return result
+  
+  //display
+  for (let i = 1; i <= num; i++){
+    display += `${i} `
+    if (i < num) {
+      display += '+ '
+    }
+    if (i == num) {
+      display += `= ${result}` 
+    }
+  }
+  return display
 }
 
 function ideas(arr) {
