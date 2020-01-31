@@ -1,32 +1,49 @@
 function formatDuration(num) {
   let tahun = 0
-  let bulan = 0
   let menit = 0
   let jam = 0
   let hari = 0
 
   tahun = Math.floor(num / (60 * 60 * 24 * 30 * 12))
 
-  //sisa bulan
-  num = num % (60 * 60 * 24 * 30 * 12)
-  bulan = Math.floor(num / (60 * 60 * 24 * 30))
-
-  // sisa hari
-  num = num % (60 * 60 * 24 * 30)
+  // proses sisa hari
+  num = num % (60 * 60 * 24 * 365)
   hari = Math.floor(num / (60 * 60 * 24))
 
-  // sisa jam
+  // proses sisa jam
   num = num % (60 * 60 * 24)
   jam = Math.floor(num / (60 * 60))
 
-  //sisa menit
+  // proses sisa menit
   num = num % (60 * 60)
   menit = Math.floor(num / 60)
 
   //sisa detik
   num = num % 60
 
-  return `${tahun} year(s) ${bulan} month(s) ${hari} day(s) ${jam} hour(s) ${menit} minutes ${num} second(s)`
+  //display
+  let Y = ''
+  tahun == 1
+    ? Y = `${tahun} Year`
+    : Y = `${tahun} Years`
+  let D = ''
+  hari == 1
+    ? D = `${hari} Day`
+    : D = `${hari} Days`
+  let H = ''
+  jam == 1
+    ? H = `${jam} Hour`
+    : H = `${jam} Hours`
+  let m = ''
+  menit == 1
+    ? m = `${jam} Minute`
+    : m = `${jam} Minutes`
+  let s = ''
+  num == 1
+    ? s = `${num} Second`
+    : s = `${num} Seconds`
+  
+  return `${Y} ${D} ${H} ${m} ${s}` 
 }
 
 function arrayMash(arr1, arr2) {
@@ -62,6 +79,7 @@ function summation(num) {
 function ideas(arr) {
   let goodCount = 0;
   while (arr.indexOf('good') > -1) {
+    console.log(arr)
     goodCount++
     arr.splice(arr.indexOf('good'), 1)
   }
@@ -75,11 +93,22 @@ function ideas(arr) {
 }
 
 function sequenceSum(start, end, n) {
+  let display = ''
   let result = 0
   for (let i = start; i <= end; i += n){
     result += i
   }
-  return result
+  //display
+  for (let i = start; i <= end; i += n){
+    display += `${i} `
+    if (i < end) {
+      display += '+ '
+    }
+    if (i == end) {
+      display += `= ${result}` 
+    }
+  }
+  return display;
 }
 console.log(formatDuration(123456789))
 console.log(arrayMash([1, 2, 3], ['a', 'b', 'c']))
