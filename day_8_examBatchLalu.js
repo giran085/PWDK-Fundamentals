@@ -23,26 +23,46 @@ function formatDuration(num) {
 
   //display
   let Y = ''
-  tahun == 1
-    ? Y = `${tahun} Year`
-    : Y = `${tahun} Years`
   let D = ''
-  hari == 1
-    ? D = `${hari} Day`
-    : D = `${hari} Days`
   let H = ''
-  jam == 1
-    ? H = `${jam} Hour`
-    : H = `${jam} Hours`
   let m = ''
-  menit == 1
-    ? m = `${jam} Minute`
-    : m = `${jam} Minutes`
   let s = ''
-  num == 1
-    ? s = `${num} Second`
-    : s = `${num} Seconds`
-  
+  if (tahun == 1) {
+    Y = `${tahun} Year`
+  } else if (tahun > 1) {
+    Y = `${tahun} Years`
+  } else {
+    Y = ``
+  }
+  if (hari == 1) {
+    D = `${hari} Day`
+  } else if (hari > 1) {
+    D = `${hari} Days`
+  } else {
+    D = ''
+  }
+  if (jam == 1) {
+    H = `${jam} Hour`
+  } else if (jam > 1) {
+    H = `${jam} Hours`
+  } else {
+    H = ''
+  }
+  if (menit == 1) {
+    m = `${menit} Minute`
+  } else if (menit > 1) {
+    m = `${menit} Minutes`
+  } else {
+    m = ''
+  }
+  if (num == 1) {
+    s = `${num} Second`
+  } else if (num > 1) {
+    s = `${num} Seconds`
+  } else {
+    s = ''
+  }
+ 
   return `${Y} ${D} ${H} ${m} ${s}` 
 }
 
@@ -79,7 +99,6 @@ function summation(num) {
 function ideas(arr) {
   let goodCount = 0;
   while (arr.indexOf('good') > -1) {
-    console.log(arr)
     goodCount++
     arr.splice(arr.indexOf('good'), 1)
   }
@@ -110,7 +129,7 @@ function sequenceSum(start, end, n) {
   }
   return display;
 }
-console.log(formatDuration(123456789))
+console.log(formatDuration(123456780))
 console.log(arrayMash([1, 2, 3], ['a', 'b', 'c']))
 console.log(summation(4))
 console.log(ideas(['good', 'good', 'bad', 'good']))
